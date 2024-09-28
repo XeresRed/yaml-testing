@@ -1,12 +1,18 @@
 name: My action
 description: Test my action
 
+inputs:
+  message:
+    description: message to print
+    requited: true
+    default: Mundo
+
 runs:
   using: composite
 
   steps:
     - name: Hola my action
-      run: echo "Hola mundo" >> text.txt
+      run: echo "Hola ${{inputs.message}}" >> text.txt
       shell: bash
     - name: read text
       run: cat text.txt

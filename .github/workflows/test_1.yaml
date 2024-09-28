@@ -21,3 +21,5 @@ jobs:
         run: ls -al
       - name: Create text file
         uses: ./.github/actions/my-action
+        with:
+          message: Juan Camilo
