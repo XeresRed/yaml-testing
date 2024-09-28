@@ -22,9 +22,9 @@ jobs:
       - name: LS
         run: ls -al
       - name: Run envs
+        run: echo "$MY_VAR $INTERN_STEP_VAR ${{vars.MY_GITHUB_VAR}}"
         env:
-          SECRET_STEP_VAR: 12345
-        run: echo "$MY_VAR $SECRET_STEP_VAR ${{vars.MY_GITHUB_VAR}}"
+          INTERN_STEP_VAR: 12345
       - name: Run secrets
         run: echo "Secrets ${{secrets.SECRET_KEY}}"
       - name: Create text file
