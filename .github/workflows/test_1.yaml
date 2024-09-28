@@ -14,11 +14,17 @@ jobs:
   other:
     runs-on: ubuntu-latest
     needs: [hello]
+    env:
+      MY_VAR: 103858532HLKSLF
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.0
       - name: LS
         run: ls -al
+      - name: Run envs
+        env:
+          SECRET_STEP_VAR: 12345
+        run: echo $MY_VAR $SECRET_STEP_VAR ${{vars.MY_GITHUB_VAR}}
       - name: Create text file
         uses: ./.github/actions/my-action
         with:
