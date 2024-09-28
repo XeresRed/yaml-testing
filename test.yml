@@ -1,0 +1,11 @@
+key: 12163
+person:
+  name: Juan
+  city: tulua
+  items:
+    - item 1
+    - item 2
+multiline: |
+  npm i
+
+volumes: # pone por defecto el valor de null
